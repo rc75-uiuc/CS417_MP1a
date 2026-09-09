@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 1104311950}
   - component: {fileID: 1104311949}
   m_Layer: 0
-  m_Name: WallPlane (2)
+  m_Name: WallPlane 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: 1264289763}
   - component: {fileID: 1264289762}
   m_Layer: 0
-  m_Name: WallPlane (3)
+  m_Name: WallPlane 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1113,7 +1113,7 @@ GameObject:
   - component: {fileID: 1290775843}
   - component: {fileID: 1290775842}
   m_Layer: 0
-  m_Name: WallPlane (1)
+  m_Name: WallPlane 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1544,7 +1544,7 @@ GameObject:
   - component: {fileID: 1842207095}
   - component: {fileID: 1842207094}
   m_Layer: 0
-  m_Name: WallPlane
+  m_Name: WallPlane 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
