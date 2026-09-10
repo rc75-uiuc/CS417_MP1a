@@ -7,13 +7,16 @@ public class Quit: MonoBehaviour
     void start()
     {
         action.action.Enable();
-        action.action.performed += (ctx) =>
+    }
+    void Update()
+    {
+        if (action.action.WasPressedThisFrame())
         {
             #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
             #else
                 Application.Quit();
             #endif
-        };
+        }
     }
 }
