@@ -55,6 +55,7 @@
     <Compile Include="Assets\breakoutScript.cs" />
     <Compile Include="Assets\cometOrbitScript.cs" />
     <Compile Include="Assets\LightScripting.cs" />
+    <Compile Include="Assets\Planet Earth Free\SpinFree.cs" />
     <Compile Include="Assets\QuitScripting.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Projectile.cs" />
