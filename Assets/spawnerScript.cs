@@ -5,6 +5,7 @@ public class ObjectSpawner : MonoBehaviour
 {
     public GameObject objectToSpawn;
     public Transform spawnPoint;
+    public float projectileSpeed = 5f;
 
     private InputDevice rightController;
     private bool previousTriggerState = false;
@@ -33,6 +34,17 @@ public class ObjectSpawner : MonoBehaviour
 
     void SpawnObject()
     {
-        Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
+        GameObject newObject = Instantiate(
+            objectToSpawn,
+            spawnPoint.position,
+            spawnPoint.rotation
+        );
+
+        Projectile projectile = newObject.GetComponent<Projectile>();
+
+        if (projectile != null)
+        {
+            projectile.velocity = spawnPoint.forward * projectileSpeed;
+        }
     }
 }
