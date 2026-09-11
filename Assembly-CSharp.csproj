@@ -58,6 +58,7 @@
     <Compile Include="Assets\LightScripting.cs" />
     <Compile Include="Assets\QuitScripting.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\spawnerScript.cs" />
     <Compile Include="Assets\MoonOrbitScript.cs" />
   </ItemGroup>
   <ItemGroup>
