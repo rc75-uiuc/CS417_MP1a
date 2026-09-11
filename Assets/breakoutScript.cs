@@ -18,8 +18,8 @@ public class PlayerTeleport : MonoBehaviour
         spawnPosition = transform.position;
         spawnRotation = transform.rotation;
 
-        // Get the right-hand controller
-        controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+        // Get the left-hand controller
+        controller = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
     }
 
     void Update()
@@ -27,7 +27,7 @@ public class PlayerTeleport : MonoBehaviour
         bool buttonState;
 
         if (controller.TryGetFeatureValue(
-            CommonUsages.primaryButton,
+            CommonUsages.secondaryButton,
             out buttonState))
         {
             // Detect a new button press rather than holding the button
