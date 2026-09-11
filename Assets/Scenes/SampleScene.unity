@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &207147545 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1670256625, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1999699002}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &221581922
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +295,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Controls: \nLH Primary Button - Quit\nLH Secondary Button - Breakout TP\nRH
-    Primary Button - Jump\nRH Secondary Button - Switch Light"
+    Primary Button - Jump\nRH Secondary Button - Switch Light\nRH Trigger - Spawn
+    Cube"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1125,12 +1131,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314882746}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1999699005}
+  m_Father: {fileID: 207147545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1321699722
 GameObject:
@@ -2069,7 +2075,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 1670256625, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1314882747}
     m_AddedComponents:
@@ -2103,11 +2109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc73658846c21d45affdbb5e6662e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Quit
---- !u!4 &1999699005 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-  m_PrefabInstance: {fileID: 1999699002}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1999699011
 MonoBehaviour:
   m_ObjectHideFlags: 0
