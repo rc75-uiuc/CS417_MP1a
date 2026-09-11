@@ -1,40 +1,58 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.XR;
 
 public class PlayerTeleport : MonoBehaviour
 {
-    public InputActionReference action;
     public Transform breakoutPlane;
 
     private Vector3 spawnPosition;
     private Quaternion spawnRotation;
+
+    private InputDevice controller;
+    private bool previousButtonState = false;
     private bool isOutside = false;
 
     void Start()
     {
-        // Remember the player's initial position and rotation
+        // Remember initial player position
         spawnPosition = transform.position;
         spawnRotation = transform.rotation;
+
+        // Get the right-hand controller
+        controller = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
     }
 
     void Update()
     {
-        if (action.action.WasPressedThisFrame())
+        bool buttonState;
+
+        if (controller.TryGetFeatureValue(
+            CommonUsages.primaryButton,
+            out buttonState))
         {
-            if (isOutside)
+            // Detect a new button press rather than holding the button
+            if (buttonState && !previousButtonState)
             {
-                // Return to the original spawn position
-                transform.position = spawnPosition;
-                transform.rotation = spawnRotation;
-                isOutside = false;
+                TogglePosition();
             }
-            else
-            {
-                // Move to the BreakoutPlane
-                transform.position = breakoutPlane.position;
-                transform.rotation = breakoutPlane.rotation;
-                isOutside = true;
-            }
+
+            previousButtonState = buttonState;
+        }
+    }
+
+    void TogglePosition()
+    {
+        if (isOutside)
+        {
+            transform.position = spawnPosition;
+            transform.rotation = spawnRotation;
+            isOutside = false;
+        }
+        else
+        {
+            transform.position = breakoutPlane.position;
+            transform.rotation = breakoutPlane.rotation;
+            isOutside = true;
         }
     }
 }
