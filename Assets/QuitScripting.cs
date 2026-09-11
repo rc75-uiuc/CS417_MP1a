@@ -1,22 +1,41 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.XR;
 
-public class Quit: MonoBehaviour
+public class QuitGame : MonoBehaviour
 {
-    public InputActionReference action;
-    void start()
+    private InputDevice leftController;
+    private bool previousButtonState = false;
+
+    void Start()
     {
-        action.action.Enable();
+        leftController = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
     }
+
     void Update()
     {
-        if (action.action.WasPressedThisFrame())
+        bool buttonPressed;
+
+        if (leftController.TryGetFeatureValue(
+            CommonUsages.primaryButton,
+            out buttonPressed))
         {
-            #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-            #else
-                Application.Quit();
-            #endif
+            if (buttonPressed && !previousButtonState)
+            {
+                Quit();
+            }
+
+            previousButtonState = buttonPressed;
         }
+    }
+
+    void Quit()
+    {
+        Debug.Log("Quitting game");
+
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 }

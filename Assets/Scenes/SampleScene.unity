@@ -290,7 +290,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Controls: \nLH Primary Button - Quit\nLH Secondary Button - Breakout TP\nRH
-    Primary Button - Toggle Light"
+    Primary Button - Jump\nRH Secondary Button - Switch Light"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1242,7 +1242,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightScripting
   light: {fileID: 1321699724}
-  action: {fileID: -3875704489234743591, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1498751116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1954,7 +1953,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc73658846c21d45affdbb5e6662e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Quit
-  action: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &1999699011
 MonoBehaviour:
   m_ObjectHideFlags: 0

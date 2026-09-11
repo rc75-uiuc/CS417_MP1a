@@ -1,32 +1,51 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.XR;
 
 public class LightScripting : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Light light;
-    public InputActionReference action;
+
+    private InputDevice rightController;
+    private bool previousButtonState = false;
     private bool isRed = false;
+
     void Start()
     {
         light = GetComponent<Light>();
+
+        rightController = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+
         light.color = Color.white;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (action.action.WasPressedThisFrame())
+        bool buttonPressed;
+
+        if (rightController.TryGetFeatureValue(
+            CommonUsages.secondaryButton,
+            out buttonPressed))
         {
-            isRed = !isRed;
-            if (isRed)
+            if (buttonPressed && !previousButtonState)
             {
-                light.color = new Color(0.8f, 0.08f, 0.08f);
+                ToggleLight();
             }
-            else
-            {
-                light.color = Color.white;
-            }
+
+            previousButtonState = buttonPressed;
+        }
+    }
+
+    void ToggleLight()
+    {
+        isRed = !isRed;
+
+        if (isRed)
+        {
+            light.color = new Color(0.8f, 0.08f, 0.08f);
+        }
+        else
+        {
+            light.color = Color.white;
         }
     }
 }
